@@ -4,7 +4,7 @@ class Student
 
   def self.new_from_db(row)
     # create a new Student object given a row from the database
-    student = self.new  # self.new is the same as running Song
+    student = self.new  # self.new is the same as running Student
     student.id = row[0]
     student.name =  row[1]
     student.grade = row[2]
@@ -91,7 +91,7 @@ class Student
     sql = "SELECT * FROM students WHERE grade = 10 LIMIT ?"
    DB[:conn].execute(sql, x).collect do |row|
       self.new_from_db(row) # this helpos create a new instance of student
-      binding.pry
+    
   end
 end
   
